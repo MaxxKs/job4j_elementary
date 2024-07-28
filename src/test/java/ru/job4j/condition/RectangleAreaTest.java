@@ -10,7 +10,7 @@ class RectangleAreaTest {
         int expendet = 2;
         double p = 6;
         double k = 2;
-        double output = RectangleArea.square(p,k);
+        double output = RectangleArea.square(p, k);
         assertThat(output).isEqualTo(expendet, withPrecision(0.01));
     }
 
