@@ -14,7 +14,7 @@ class FitTest {
     }
 
     @Test
-    void whenMan187Then100delta05() {
+    void whenMan187Then100dot05() {
         short input = 187;
         double expected = 100.05;
         double output = Fit.manWeight(input);
@@ -30,7 +30,7 @@ class FitTest {
     }
 
     @Test
-    void whenWoman175Then74delta75() {
+    void whenWoman175Then74dot75() {
         short input = 175;
         double expected = 74.75;
         double output = Fit.womanWeight(input);
