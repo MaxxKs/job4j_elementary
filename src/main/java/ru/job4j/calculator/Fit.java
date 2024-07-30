@@ -1,22 +1,32 @@
 package ru.job4j.calculator;
 
 public class Fit {
-    public static double manWeight(short height) {
-        double result = (height - 100) * 1.15;
-        return result;
+    private static final int MAN_OFFSET = 100;
+    private static final int WOMAN_OFFSET = 110;
+    private static final double WEIGHT_FACTOR = 1.15;
+
+    public static double manWeight(int height) {
+        if (height <= 0) {
+            throw new IllegalArgumentException("Height must be positive");
+        }
+        return (height - MAN_OFFSET) * WEIGHT_FACTOR;
     }
 
-    public static double womanWeight(short height) {
-        double result = (height - 110) * 1.15;
-        return result;
+    public static double womanWeight(int height) {
+        if (height <= 0) {
+            throw new IllegalArgumentException("Height must be positive");
+        }
+        return (height - WOMAN_OFFSET) * WEIGHT_FACTOR;
     }
 
     public static void main(String[] args) {
-        short height = 187;
-        double man = manWeight(height);
-        System.out.println("Ideal weight for men height 187 - " + man);
-        height = 175;
-        double woman = womanWeight(height);
-        System.out.println("Ideal weight for woman height 175 - " + woman);
+        int manHeight = 187;
+        int womanHeight = 175;
+
+        double manWeight = manWeight(manHeight);
+        System.out.println("Ideal weight for men with height " + manHeight + " cm is " + manWeight + " kg");
+
+        double womanWeight = womanWeight(womanHeight);
+        System.out.println("Ideal weight for women with height " + womanHeight + " cm is " + womanWeight + " kg");
     }
 }
