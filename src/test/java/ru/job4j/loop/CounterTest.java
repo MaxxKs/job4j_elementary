@@ -42,7 +42,7 @@ class CounterTest {
     }
 
     @Test
-    void whenStart4Finish13Sum0() {
+    void whenStart4Finish13Sum85() {
         int start = 4;
         int finish = 13;
         int result = Counter.sum(start, finish);
@@ -51,7 +51,7 @@ class CounterTest {
     }
 
     @Test
-    void whenStart1Finish1Sum2() {
+    void whenStart1Finish1Sum1() {
         int start = 1;
         int finish = 1;
         int result = Counter.sum(start, finish);
@@ -60,11 +60,65 @@ class CounterTest {
     }
 
     @Test
-    void whenStart1Finish7Sum2() {
+    void whenStart1Finish7Sum28() {
         int start = 1;
         int finish = 7;
         int result = Counter.sum(start, finish);
         int expected = 28;
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void whenStart1Finish10SumEven30() {
+        int start = 1;
+        int finish = 10;
+        int result = Counter.sumByEven(start, finish);
+        int expected = 30;
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void whenStart1Finish8SumEven20() {
+        int start = 1;
+        int finish = 8;
+        int result = Counter.sumByEven(start, finish);
+        int expected = 20;
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void whenStart5Finish10SumEven24() {
+        int start = 5;
+        int finish = 10;
+        int result = Counter.sumByEven(start, finish);
+        int expected = 24;
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void whenStartMinus10Finish0SumEvenMinus30() {
+        int start = -10;
+        int finish = 0;
+        int result = Counter.sumByEven(start, finish);
+        int expected = -30;
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void whenStartMinus10Finish8SumEvenMinus10() {
+        int start = -10;
+        int finish = 8;
+        int result = Counter.sumByEven(start, finish);
+        int expected = -10;
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void whenStartMinus3Finish5SumEven4() {
+        int start = -3;
+        int finish = 5;
+        int result = Counter.sumByEven(start, finish);
+        int expected = 4;
         assertThat(result).isEqualTo(expected);
     }
 }
