@@ -12,6 +12,7 @@ class SquareTest {
         int[] expected = new int[] {0, 1, 4};
         assertThat(result).containsExactly(expected);
     }
+
     @Test
     void whenBound5Then0141624() {
         int bound = 5;
